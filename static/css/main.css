@@ -1,0 +1,113 @@
+/* main.css */
+
+/* General Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #4a4a4a;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #3273dc; /* Bulma primary color */
+}
+
+/* Navbar Styling */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Hero Section */
+.hero.is-primary {
+    background: linear-gradient(rgba(50, 115, 220, 0.8), rgba(50, 115, 220, 0.8)),
+                url('../imgs/farm-bg.jpg') center/cover no-repeat;
+    color: #0c0808;
+}
+
+.hero .title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.button {
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(50, 115, 220, 0.2);
+}
+
+.button.is-rounded {
+    border-radius: 50px;
+}
+
+/* Inputs */
+.input.is-rounded {
+    border-radius: 30px;
+    border: 1px solid #dcdcdc;
+}
+
+.input:focus {
+    border-color: #3273dc;
+    box-shadow: 0 0 5px rgba(50, 115, 220, 0.5);
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 1rem;
+    background-color: #f5f5f5;
+}
+
+.footer a {
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #3273dc;
+}
+
+/* Container */
+.container {
+    padding: 2rem;
+}
+
+.container img {
+    margin-bottom: 1rem;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.has-text-grey-dark {
+    color: #7a7a7a !important;
+}

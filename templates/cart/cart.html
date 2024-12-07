@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Cart{% endblock title %}
+
+{% block content %}
+    <h1 class="title">Cart</h1>
+
+    {% if cart %}
+
+        <!-- Cart Table here as usual -->
+
+        <h2 class="subtitle">Checkout Information</h2>
+
+        <form method="post" action="" id="payment-form">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="notification is-danger">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            {% if form.errors %}
+                <div class="notification is-danger">
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li><strong>{{ field.label }}</strong>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <div class="columns">
+                <div class="column is-6">
+                    <!-- Phone Number -->
+                    <div class="field">
+                        <label for="id_phone" class="label">Phone Number</label>
+                        <div class="control">
+                            {{ form.phone }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <!-- Address -->
+                    <div class="field">
+                        <label for="id_address" class="label">Address</label>
+                        <div class="control">
+                            {{ form.address }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <!-- Address -->
+                    <div class="field">
+                        <label for="id_address" class="label">Amount</label>
+                        <div class="control">
+                            {{ form.amount }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="subtitle">Payment Information</h2>
+
+            <div class="field">
+                <div class="control">
+                    <button class="button is-dark mt-4 is-uppercase">Checkout</button>
+                </div>
+            </div>
+        </form>
+    {% else %}
+        <p>You don't have any products in your cart.</p>
+    {% endif %}
+{% endblock content %}
